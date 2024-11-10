@@ -6,43 +6,229 @@
 
     <title>Служба доставки</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-light shadow-sm m-sm-1">
-        <div class="container-fluid">
-            <a class="navbar-brand" aria-current="page" href="index.html">Служба доставки</a>
-            <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#nav-collapsable-content"
-                    aria-controls="nav-collapsable-content"
-                    aria-expanded="false"
-                    aria-label="Открыть навигацию">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="nav-collapsable-content" class="collapse navbar-collapse justify-content-end">
-                <ul class="navbar-nav nav-underline">
-                    <li class="nav-item">
-                        <a class="nav-link" href="order-create.html">Сделать заказ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="track.html">Отследить посылку</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="online-payment.html">Online оплата</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="comment-create.html">Написать отзыв</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">О сайте</a>
-                    </li>
-                </ul>
+<nav class="navbar navbar-expand-lg bg-light shadow-sm m-sm-1 sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" aria-current="page" href="index.html">Служба доставки</a>
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#nav-collapsable-content"
+                aria-controls="nav-collapsable-content"
+                aria-expanded="false"
+                aria-label="Открыть навигацию">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="nav-collapsable-content" class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav nav-underline">
+                <li class="nav-item">
+                    <a class="nav-link" href="order-create.html">Сделать заказ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="track.html">Отследить посылку</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="online-payment.html">Online оплата</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="comment-create.html">Написать отзыв</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">О сайте</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
+<div class="container mt-3 mt-lg-5">
+
+    <!-- region Форма "Рассчитать доставку" -->
+    <form action="order-create.html" method="post" class="container mb-3 mb-lg-5 shadow-sm p-3 rounded-3">
+        <div class="row row-cols-lg-2 mb-3">
+            <div class="mb-1">
+                <div class="input-group">
+                    <span class="input-group-text">Откуда</span>
+                    <div class="form-floating">
+                        <input type="text" id="from" name="from" class="form-control" list="cityOptions">
+                        <label for="from">Город</label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="input-group">
+                    <span class="input-group-text">Куда</span>
+                    <div class="form-floating">
+                        <input type="text" id="to" name="to" class="form-control" list="cityOptions">
+                        <label for="to">Город</label>
+                    </div>
+                </div>
+            </div>
+            <datalist id="cityOptions">
+                <!-- Взял с https://hramy.ru/regions/city_reg.htm -->
+                <option value="Москва, Зеленоград">
+                <option value="Москва">
+                <option value="Москва, Московский Поселение">
+                <option value="Москва, Московский Поселок">
+                <option value="Москва, Троицк">
+                <option value="Москва, Щербинка">
+                <option value="Татарстан Республика, Агрыз">
+                <option value="Татарстан Республика, Азнакаево">
+                <option value="Татарстан Республика, Альметьевск">
+                <option value="Татарстан Республика, Арск">
+                <option value="Татарстан Республика, Бавлы">
+                <option value="Татарстан Республика, Болгар">
+                <option value="Татарстан Республика, Бугульма">
+                <option value="Татарстан Республика, Буинск">
+                <option value="Татарстан Республика, Елабуга">
+                <option value="Татарстан Республика, Заинск">
+                <option value="Татарстан Республика, Зеленодольск">
+                <option value="Татарстан Республика, Казань">
+                <option value="Татарстан Республика, Лаишево">
+                <option value="Татарстан Республика, Лениногорск">
+                <option value="Чувашская Республика - Чувашия, Алатырь">
+                <option value="Чувашская Республика - Чувашия, Канаш">
+                <option value="Чувашская Республика - Чувашия, Козловка">
+                <option value="Чувашская Республика - Чувашия, Мариинский Посад">
+                <option value="Чувашская Республика - Чувашия, Новочебоксарск">
+                <option value="Чувашская Республика - Чувашия, Цивильск">
+                <option value="Чувашская Республика - Чувашия, Чебоксары">
+                <option value="Чувашская Республика - Чувашия, Шумерля">
+                <option value="Чувашская Республика - Чувашия, Ядрин">
+                <option value="Нижегородская Область, Арзамас">
+                <option value="Нижегородская Область, Балахна">
+                <option value="Нижегородская Область, Богородск">
+                <option value="Нижегородская Область, Бор">
+                <option value="Нижегородская Область, Ветлуга">
+                <option value="Нижегородская Область, Володарск">
+                <option value="Нижегородская Область, Ворсма">
+                <option value="Нижегородская Область, Выкса">
+                <option value="Нижегородская Область, Горбатов">
+                <option value="Нижегородская Область, Городец">
+                <option value="Нижегородская Область, Дзержинск">
+                <option value="Нижегородская Область, Заволжье">
+                <option value="Нижегородская Область, Княгинино">
+                <option value="Нижегородская Область, Кстово">
+                <option value="Нижегородская Область, Кулебаки">
+                <option value="Нижегородская Область, Лукоянов">
+                <option value="Нижегородская Область, Лысково">
+                <option value="Нижегородская Область, Навашино">
+                <option value="Нижегородская Область, Нижний Новгород">
+                <option value="Нижегородская Область, Павлово">
+                <option value="Нижегородская Область, Первомайск">
+                <option value="Нижегородская Область, Перевоз">
+                <option value="Нижегородская Область, Саров">
+                <option value="Нижегородская Область, Семенов">
+                <option value="Нижегородская Область, Сергач">
+                <option value="Нижегородская Область, Урень">
+            </datalist>
+        </div>
+        <span class="form-text">Укажите размеры груза</span>
+        <div class="row row-cols-lg-3 mb-3">
+            <div class="mb-1">
+                <div class="input-group">
+                    <div class="form-floating">
+                        <input type="number" id="height" name="height" class="form-control" list="cityOptions" min="0">
+                        <label for="height">Высота</label>
+                    </div>
+                    <span class="input-group-text">см</span>
+                </div>
+            </div>
+            <div class="mb-1">
+                <div class="input-group">
+                    <div class="form-floating">
+                        <input type="number" id="width" name="width" class="form-control" list="cityOptions" min="0">
+                        <label for="width">Ширина</label>
+                    </div>
+                    <span class="input-group-text">см</span>
+                </div>
+            </div>
+            <div class="">
+                <div class="input-group">
+                    <div class="form-floating">
+                        <input type="number" id="length" name="length" class="form-control" list="cityOptions" min="0">
+                        <label for="length">Длина</label>
+                    </div>
+                    <span class="input-group-text">см</span>
+                </div>
             </div>
         </div>
-    </nav>
+        <div class="row justify-content-lg-end px-3">
+            <button type="submit" class="btn btn-primary col col-lg-3">Рассчитать стоимость</button>
+        </div>
+    </form>
+    <!-- endregion -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- region Карта -->
+    <div class="px-4 px-md-0 mb-3 mb-lg-5">
+        <div class="overflow-hidden container shadow-sm rounded-3 p-0 ">
+            <a href="https://yandex.ru/maps/45/cheboksary/?utm_medium=mapframe&utm_source=maps"
+               style="color:#eee;font-size:12px;position:absolute;top:0;">Чебоксары</a>
+            <a href="https://yandex.ru/maps/45/cheboksary/?ll=47.247731%2C56.139920&utm_medium=mapframe&utm_source=maps&z=12"
+               style="color:#eee;font-size:12px;position:absolute;top:14px;">
+                Яндекс Карты — транспорт, навигация, поиск мест
+            </a>
+            <iframe src="https://yandex.ru/map-widget/v1/?ll=47.247731%2C56.139920&z=12"
+                    width="100%"
+                    height="500"
+                    style="position:relative;"
+            ></iframe>
+        </div>
+    </div>
+    <!-- endregion -->
+
+    <!-- region О компании -->
+    <!-- TODO подготовить контент -->
+    <!-- endregion -->
+
+    <!-- region Форма вопросов -->
+    <form id="question-block" action="index.html" method="post" class="container mb-3 mb-lg-5 shadow-sm p-3 rounded-3">
+        <span class="lead">Есть вопросы? Мы готовы ответить</span>
+        <div class="row row-cols-lg-2 mb-3 mt-2">
+            <div class="mb-1">
+                <div class="form-floating">
+                    <input type="text" id="name" name="name" class="form-control" list="cityOptions">
+                    <label for="name">Имя</label>
+                </div>
+            </div>
+            <div>
+                <div class="form-floating">
+                    <input type="email" id="email" name="email" class="form-control" list="cityOptions">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Ваш вопрос" id="question" name="question" style="height: 100px"></textarea>
+                    <label for="question">Ваш вопрос</label>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-lg-end px-3">
+            <button type="submit" class="btn btn-primary col col-lg-3">Отправить</button>
+        </div>
+    </form>
+    <!-- endregion -->
+
+</div>
+
+<footer class="p-3 text-bg-dark fs-6 fw-light d-flex justify-content-between">
+    <div><span class="text-white-50">&COPY;</span> Vitaliy Aleksandrov, 2024,
+        <a href="https://github.com/Vortex-V"
+                target="_blank"
+                class="link-light link-underline link-underline-opacity-0 link-underline-opacity-50-hover">
+            My Git
+        </a>
+    </div>
+    <a href="sitemap.html" class="link-light link-underline link-underline-opacity-0 link-underline-opacity-50-hover">Карта сайта</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 </html>

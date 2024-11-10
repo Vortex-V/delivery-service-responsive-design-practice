@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-light shadow-sm m-sm-1">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Служба доставки</a>
+        <a class="navbar-brand" aria-current="page" href="index.html">Служба доставки</a>
         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#nav-collapsable-content"
@@ -23,7 +23,7 @@
         <div id="nav-collapsable-content" class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav nav-underline">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="order-create.html">Сделать заказ</a>
+                    <a class="nav-link" href="order-create.html">Сделать заказ</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="track.html">Отследить посылку</a>
@@ -43,12 +43,17 @@
     </div>
 </nav>
 
-<nav class="container mt-3 mt-lg-5" aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Сделать заказ</li>
-    </ol>
-</nav>
+<div class="container mt-3 mt-lg-5 vh-100">
+    <h1>Карта сайта</h1>
+    <div class="row">
+        <a class="link-primary link-underline link-underline-opacity-0 link-underline-opacity-50-hover mb-2" href="index.html">Главная</a>
+        <a class="link-primary link-underline link-underline-opacity-0 link-underline-opacity-50-hover mb-2" href="order-create.html">Сделать заказ</a>
+        <a class="link-primary link-underline link-underline-opacity-0 link-underline-opacity-50-hover mb-2" href="track.html">Отследить посылку</a>
+        <a class="link-primary link-underline link-underline-opacity-0 link-underline-opacity-50-hover mb-2" href="online-payment.html">Online оплата</a>
+        <a class="link-primary link-underline link-underline-opacity-0 link-underline-opacity-50-hover mb-2" href="comment-create.html">Написать отзыв</a>
+        <a class="link-primary link-underline link-underline-opacity-0 link-underline-opacity-50-hover mb-2" href="about.html">О сайте</a>
+    </div>
+</div>
 
 <footer class="p-3 text-bg-dark fs-6 fw-light d-flex justify-content-between">
     <div><span class="text-white-50">&COPY;</span> Vitaliy Aleksandrov,
