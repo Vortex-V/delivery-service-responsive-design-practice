@@ -47,12 +47,13 @@
 
     <!-- region Форма "Рассчитать доставку" -->
     <form action="order-create.html" method="post" class="container mb-3 mb-lg-5 shadow-sm p-3 rounded-3">
+        <h3 class="lead">Зарегистрируйте посылку</h3>
         <div class="row row-cols-lg-2 mb-3">
             <div class="mb-1">
                 <div class="input-group">
                     <span class="input-group-text">Откуда</span>
                     <div class="form-floating">
-                        <input type="text" id="from" name="from" class="form-control" list="cityOptions">
+                        <input type="text" id="from" name="from" class="form-control" list="city-options">
                         <label for="from">Город</label>
                     </div>
                 </div>
@@ -61,12 +62,12 @@
                 <div class="input-group">
                     <span class="input-group-text">Куда</span>
                     <div class="form-floating">
-                        <input type="text" id="to" name="to" class="form-control" list="cityOptions">
+                        <input type="text" id="to" name="to" class="form-control" list="city-options">
                         <label for="to">Город</label>
                     </div>
                 </div>
             </div>
-            <datalist id="cityOptions">
+            <datalist id="city-options">
                 <!-- Взял с https://hramy.ru/regions/city_reg.htm -->
                 <option value="Москва, Зеленоград">
                 <option value="Москва">
@@ -130,7 +131,7 @@
             <div class="mb-1">
                 <div class="input-group">
                     <div class="form-floating">
-                        <input type="number" id="height" name="height" class="form-control" list="cityOptions" min="0">
+                        <input type="number" id="height" name="height" class="form-control" min="0">
                         <label for="height">Высота</label>
                     </div>
                     <span class="input-group-text">см</span>
@@ -139,7 +140,7 @@
             <div class="mb-1">
                 <div class="input-group">
                     <div class="form-floating">
-                        <input type="number" id="width" name="width" class="form-control" list="cityOptions" min="0">
+                        <input type="number" id="width" name="width" class="form-control" min="0">
                         <label for="width">Ширина</label>
                     </div>
                     <span class="input-group-text">см</span>
@@ -148,7 +149,7 @@
             <div class="">
                 <div class="input-group">
                     <div class="form-floating">
-                        <input type="number" id="length" name="length" class="form-control" list="cityOptions" min="0">
+                        <input type="number" id="length" name="length" class="form-control" min="0">
                         <label for="length">Длина</label>
                     </div>
                     <span class="input-group-text">см</span>
@@ -162,7 +163,8 @@
     <!-- endregion -->
 
     <!-- region Карта -->
-    <div class="px-4 px-md-0 mb-3 mb-lg-5">
+    <h3 class="px-2">Отделения в вашем городе</h3>
+    <div class="px-4 px-md-0 mb-3 mb-lg-5 mt-2">
         <div class="overflow-hidden container shadow-sm rounded-3 p-0 ">
             <a href="https://yandex.ru/maps/45/cheboksary/?utm_medium=mapframe&utm_source=maps"
                style="color:#eee;font-size:12px;position:absolute;top:0;">Чебоксары</a>
@@ -180,22 +182,62 @@
     <!-- endregion -->
 
     <!-- region О компании -->
-    <!-- TODO подготовить контент -->
+    <h3 class="px-2">Стараемся для вас</h3>
+    <div class="container mx-auto mb-3 mb-lg-5 row g-4 row-cols-1 row-cols-md-2 ">
+        <div class="col d-flex justify-content-center">
+            <div class="card shadow-sm border-0" style="max-width: 480px">
+                <img src="assets/images/parcel_registration.jpg" class="card-img-top" alt="Оформление посылки" loading="lazy">
+                <div class="card-body">
+                    <h5 class="card-title">Оформление посылки</h5>
+                    <p class="card-text"></p>
+                    <a href="order-create.html" class="btn btn-primary">Сделать заказ</a>
+                </div>
+            </div>
+        </div>
+        <div class="col d-flex justify-content-center">
+            <div class="card shadow-sm border-0" style="max-width: 480px">
+                <img src="assets/images/parcels.jpg" class="card-img-top" alt="5 млн посылок доставлено" loading="lazy">
+                <div class="card-body">
+                    <h5 class="card-title">5 млн посылок доставлено</h5>
+                    <p class="card-text">Мы гарантируем безопасность и своевременность доставки благодаря современным технологиям и профессионализму нашей команды.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col d-flex justify-content-center">
+            <div class="card shadow-sm border-0" style="max-width: 480px">
+                <img src="assets/images/parcel_tracking.jpg" class="card-img-top" alt="Отслеживание посылок" loading="lazy">
+                <div class="card-body">
+                    <h5 class="card-title">Отслеживание посылок</h5>
+                    <p class="card-text">С помощью удобного онлайн-отслеживания вы всегда будете знать точное местоположение вашего отправления.</p>
+                    <a href="track.html" class="btn btn-primary">Найти посылку</a>
+                </div>
+            </div>
+        </div>
+        <div class="col d-flex justify-content-center">
+            <div class="card shadow-sm border-0" style="max-width: 480px">
+                <img src="assets/images/logistics.jpg" class="card-img-top" alt="Качественная логистика" loading="lazy">
+                <div class="card-body">
+                    <h5 class="card-title">Качественная логистика</h5>
+                    <p class="card-text">Наша логистика обеспечивает быструю и надежную доставку ваших посылок в любую точку мира.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- endregion -->
 
     <!-- region Форма вопросов -->
     <form id="question-block" action="index.html" method="post" class="container mb-3 mb-lg-5 shadow-sm p-3 rounded-3">
-        <span class="lead">Есть вопросы? Мы готовы ответить</span>
+        <h3 class="lead">Есть вопросы? Мы готовы ответить</h3>
         <div class="row row-cols-lg-2 mb-3 mt-2">
             <div class="mb-1">
                 <div class="form-floating">
-                    <input type="text" id="name" name="name" class="form-control" list="cityOptions">
+                    <input type="text" id="name" name="name" class="form-control">
                     <label for="name">Имя</label>
                 </div>
             </div>
             <div>
                 <div class="form-floating">
-                    <input type="email" id="email" name="email" class="form-control" list="cityOptions">
+                    <input type="email" id="email" name="email" class="form-control">
                     <label for="email">Email</label>
                 </div>
             </div>

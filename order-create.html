@@ -7,6 +7,7 @@
     <title>Служба доставки</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-light shadow-sm m-sm-1">
@@ -49,6 +50,348 @@
         <li class="breadcrumb-item active" aria-current="page">Сделать заказ</li>
     </ol>
 </nav>
+
+<!-- region Форма регистрации заказа -->
+<div class="container mb-3 mb-lg-5">
+    <h1 class="px-2">Оформление заказа</h1>
+
+    <form action="order-create.html" method="post" class="px-3 px-md-2 px-md-0">
+        <div>
+            <span class="form-text">Груз 1</span>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-6 mb-3 g-2">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input type="text" id="parcel_type" name="parcel_type" class="form-control" list="parcel-types-list" min="0">
+                            <label for="parcel_type">Характер груза</label>
+                            <datalist id="parcel-types-list">
+                                <option value="Документы">
+                                <option value="Мебель">
+                                <option value="Электроника">
+                            </datalist>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input type="number" id="weight" name="weight" class="form-control" min="0">
+                            <label for="weight">Вес</label>
+                        </div>
+                        <span class="input-group-text">кг</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input type="number" id="height" name="height" class="form-control" min="0">
+                            <label for="height">Высота</label>
+                        </div>
+                        <span class="input-group-text">см</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input type="number" id="width" name="width" class="form-control" min="0">
+                            <label for="width">Ширина</label>
+                        </div>
+                        <span class="input-group-text">см</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input type="number" id="length" name="length" class="form-control" min="0">
+                            <label for="length">Длина</label>
+                        </div>
+                        <span class="input-group-text">см</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input type="number" id="count" name="count" class="form-control" min="0">
+                            <label for="count">Кол-во</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-lg-end px-3 mb-3">
+            <button type="button" class="btn btn-outline-success col col-md-2">Добавить <i class="bi bi-plus"></i></button>
+        </div>
+
+        <div class="mb-3">
+            <span class="lead">Упаковка</span>
+            <div class="row">
+                <fieldset class="form-check form-switch ps-5 p-3 col">
+                    <div>
+                        <input class="form-check-input" type="checkbox" role="switch" name="packageType[]" value="custom" id="package-type-custom">
+                        <label class="form-check-label fw-bolder" for="package-type-custom">
+                            Своя упаковка
+                        </label>
+                    </div>
+                    <div>
+                        <input class="form-check-input" type="checkbox" role="switch" name="packageType[]" value="paper_envelope" id="package-type-paper_envelope">
+                        <label class="form-check-label" for="package-type-paper_envelope">
+                            Бумажный конверт
+                        </label>
+                    </div>
+                    <div>
+                        <input class="form-check-input" type="checkbox" role="switch" name="packageType[]" value="plastic_bag" id="package-type-plastic_bag">
+                        <label class="form-check-label" for="package-type-plastic_bag">
+                            Пластиковый пакет
+                        </label>
+                    </div>
+                    <div>
+                        <input class="form-check-input" type="checkbox" role="switch" name="packageType[]" value="carton" id="package-type-carton">
+                        <label class="form-check-label" for="package-type-carton">
+                            Картонная коробка
+                        </label>
+                    </div>
+                    <div>
+                        <input class="form-check-input" type="checkbox" role="switch" name="packageType[]" value="bag" id="package-type-bag">
+                        <label class="form-check-label" for="package-type-bag">
+                            Мешок
+                        </label>
+                    </div>
+                    <div>
+                        <input class="form-check-input" type="checkbox" role="switch" name="packageType[]" value="stretch_wrap" id="package-type-stretch_wrap">
+                        <label class="form-check-label" for="package-type-stretch_wrap">
+                            Стрейч-плёнка
+                        </label>
+                    </div>
+                    <div>
+                        <input class="form-check-input" type="checkbox" role="switch" name="packageType[]" value="bubble_wrap" id="package-type-bubble_wrap">
+                        <label class="form-check-label" for="package-type-bubble_wrap">
+                            Пузырьковая плёнка
+                        </label>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <span class="lead">Откуда</span>
+            <div class="row row-cols-1 row-cols-lg-3 g-2 mb-3">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input type="text" id="from" name="from" class="form-control" list="city-options">
+                            <label for="from">Город</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <select type="text" id="reception_point" name="reception_point_id" class="form-select">
+                                <option value="1">Адрес 1</option>
+                                <option value="2">Адрес 2</option>
+                                <option value="2">Адрес 3</option>
+                            </select>
+                            <label for="reception_point">Пункт приёма</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input type="date" id="from_date" name="from_date" class="form-control">
+                            <label for="from_date">Дата сбора</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="form-text">Данные отправителя</span>
+            <div class="row row-cols-1 row-cols-lg-3 g-2">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input type="text" id="sender_last_name" name="sender_last_name" class="form-control">
+                            <label for="sender_last_name">Фамилия</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input type="text" id="sender_first_name" name="sender_first_name" class="form-control">
+                            <label for="sender_first_name">Имя</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <label for="sender_tel_country_id"></label>
+                        <select id="sender_tel_country_id" name="sender_tel_country_id" class="form-select" style="max-width: 100px">
+                            <option value="1">+7</option>
+                            <option value="2">+93</option>
+                            <option value="3">+355</option>
+                            <option value="4">+213</option>
+                        </select>
+                        <div class="form-floating">
+                            <input type="text" id="sender_tel" name="sender_tel" class="form-control" pattern="\d{3}\-\d{3}\-\d{4}" placeholder="999-999-9999">
+                            <label for="sender_tel">Номер телефона</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <span class="lead">Куда</span>
+            <div class="row row-cols-1 row-cols-lg-3 g-2 mb-3">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input type="text" id="to" name="to" class="form-control" list="city-options">
+                            <label for="to">Город</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <select type="text" id="pickup_point" name="pickup_point_id" class="form-select">
+                                <option value="1">Адрес 1</option>
+                                <option value="2">Адрес 2</option>
+                                <option value="2">Адрес 3</option>
+                            </select>
+                            <label for="pickup_point">Пункт выдачи</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input type="date" id="plan_date" name="plan_date" class="form-control">
+                            <label for="plan_date">Планируемая дата</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="form-text">Данные получателя</span>
+            <div class="row row-cols-1 row-cols-lg-3 g-2">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input type="text" id="recipient_last_name" name="recipient_last_name" class="form-control">
+                            <label for="recipient_last_name">Фамилия</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input type="text" id="recipient_first_name" name="recipient_first_name" class="form-control">
+                            <label for="recipient_first_name">Имя</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <label for="recipient_tel_country_id"></label>
+                        <select id="recipient_tel_country_id" name="recipient_tel_country_id" class="form-select" style="max-width: 100px">
+                            <option value="1">+7</option>
+                            <option value="2">+93</option>
+                            <option value="3">+355</option>
+                            <option value="4">+213</option>
+                        </select>
+                        <div class="form-floating">
+                            <input type="text" id="recipient_tel" name="recipient_tel" class="form-control" pattern="\d{3}\-\d{3}\-\d{4}" placeholder="999-999-9999">
+                            <label for="recipient_tel">Номер телефона</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <datalist id="city-options">
+            <!-- Взял с https://hramy.ru/regions/city_reg.htm -->
+            <option value="Москва, Зеленоград">
+            <option value="Москва">
+            <option value="Москва, Московский Поселение">
+            <option value="Москва, Московский Поселок">
+            <option value="Москва, Троицк">
+            <option value="Москва, Щербинка">
+            <option value="Татарстан Республика, Агрыз">
+            <option value="Татарстан Республика, Азнакаево">
+            <option value="Татарстан Республика, Альметьевск">
+            <option value="Татарстан Республика, Арск">
+            <option value="Татарстан Республика, Бавлы">
+            <option value="Татарстан Республика, Болгар">
+            <option value="Татарстан Республика, Бугульма">
+            <option value="Татарстан Республика, Буинск">
+            <option value="Татарстан Республика, Елабуга">
+            <option value="Татарстан Республика, Заинск">
+            <option value="Татарстан Республика, Зеленодольск">
+            <option value="Татарстан Республика, Казань">
+            <option value="Татарстан Республика, Лаишево">
+            <option value="Татарстан Республика, Лениногорск">
+            <option value="Чувашская Республика - Чувашия, Алатырь">
+            <option value="Чувашская Республика - Чувашия, Канаш">
+            <option value="Чувашская Республика - Чувашия, Козловка">
+            <option value="Чувашская Республика - Чувашия, Мариинский Посад">
+            <option value="Чувашская Республика - Чувашия, Новочебоксарск">
+            <option value="Чувашская Республика - Чувашия, Цивильск">
+            <option value="Чувашская Республика - Чувашия, Чебоксары">
+            <option value="Чувашская Республика - Чувашия, Шумерля">
+            <option value="Чувашская Республика - Чувашия, Ядрин">
+            <option value="Нижегородская Область, Арзамас">
+            <option value="Нижегородская Область, Балахна">
+            <option value="Нижегородская Область, Богородск">
+            <option value="Нижегородская Область, Бор">
+            <option value="Нижегородская Область, Ветлуга">
+            <option value="Нижегородская Область, Володарск">
+            <option value="Нижегородская Область, Ворсма">
+            <option value="Нижегородская Область, Выкса">
+            <option value="Нижегородская Область, Горбатов">
+            <option value="Нижегородская Область, Городец">
+            <option value="Нижегородская Область, Дзержинск">
+            <option value="Нижегородская Область, Заволжье">
+            <option value="Нижегородская Область, Княгинино">
+            <option value="Нижегородская Область, Кстово">
+            <option value="Нижегородская Область, Кулебаки">
+            <option value="Нижегородская Область, Лукоянов">
+            <option value="Нижегородская Область, Лысково">
+            <option value="Нижегородская Область, Навашино">
+            <option value="Нижегородская Область, Нижний Новгород">
+            <option value="Нижегородская Область, Павлово">
+            <option value="Нижегородская Область, Первомайск">
+            <option value="Нижегородская Область, Перевоз">
+            <option value="Нижегородская Область, Саров">
+            <option value="Нижегородская Область, Семенов">
+            <option value="Нижегородская Область, Сергач">
+            <option value="Нижегородская Область, Урень">
+        </datalist>
+
+        <div class="mb-3">
+            <div class="row row-cols-1 row-cols-lg-2 mb-3">
+                <div class="col">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Комментарий к заказу" id="comment" name="comment" style="height: 100px"></textarea>
+                        <label for="comment">Комментарий к заказу</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="row row-cols-md-1 row-cols-lg-2 mb-3">
+                <div class="col form-check ps-5">
+                    <input type="checkbox" id="pdata-accept" class="form-check-input">
+                    <label for="pdata-accept" class="form-check-label">Согласен(-на) на обработку персональных данных</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-lg-end px-3">
+            <button type="submit" class="btn btn-success col col-lg-3">Оформить заказ <i class="bi bi-arrow-right"></i></button>
+        </div>
+    </form>
+</div>
+
+<!-- endregion -->
 
 <footer class="p-3 text-bg-dark fs-6 fw-light d-flex justify-content-between">
     <div><span class="text-white-50">&COPY;</span> Vitaliy Aleksandrov, 2024,
